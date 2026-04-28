@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+
+body {
+  background: linear-gradient(180deg, #181062, #A721C8);
+  color: white;
+}
+
+/* TOPO */
+.topo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+  background: linear-gradient(180deg, #ffffff, #56a5c7);
+}
+
+/* Logo à esquerda */
+.logo {
+  position: absolute;
+  left: 20px;
+}
+
+.logo img {
+  width: 130px;
+  height: auto;
+}
+
+/* Título central */
+.topo h2 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+/* GRID */
+.container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
+  padding: 20px;
+}
+
+/* CARD */
+.card {
+  border-left: 1px solid rgba(255,255,255,0.3);
+  padding: 10px;
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* INPUTS */
+.card input {
+  width: 100%;
+  margin: 5px 0;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.3);
+  color: white;
+  text-align: center;
+}
+
+.card input::placeholder {
+  color: #eee;
+  font-size: 12px;
+}
+
+.card span {
+  display: block;
+  margin: 5px 0;
+}
+
+.valor {
+  margin-top: 40px;
+}
+
+.btn{
+  background-color:#5d0872;
+  width: 100px;
+  height: 30px;
+  border-radius: 6px ;
+  border-color: transparent;
+  color: #ffffff;
+}
+.resultado p {
+  white-space: nowrap;
+}
+/* RESPONSIVO */
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    border-left: none;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+  }
+}
