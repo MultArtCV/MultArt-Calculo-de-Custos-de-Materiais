@@ -1,12 +1,12 @@
 const precos = {
     adesivo: 120,
     pvc: 200,
-    pvcRefletivo:250,
-    pvcFoto:320,
+    pvcRefletivo: 250,
+    pvcFoto: 320,
     galvanizado: 220,
     galvanizadoRefletivo: 270,
     acm: 250,
-    acmRefletivo:290
+    acmRefletivo: 290
 };
 
 function calcular(tipo) {
@@ -29,14 +29,21 @@ function calcular(tipo) {
 
     let total = altura * largura * precos[tipo];
 
-    // 🔥 arredonda para 0,05
+    // corrige precisão decimal
+    total = Math.round(total * 100) / 100;
+
+    // arredonda para múltiplos de 0,05
     let totalArredondado = Math.ceil(total / 0.05) * 0.05;
 
+    // corrige precisão final
+    totalArredondado = totalArredondado.toFixed(2);
+
     document.getElementById(`resultado-${tipo}`).innerText =
-        "VALOR: R$ " + totalArredondado.toLocaleString("pt-BR", {
+        "VALOR: R$ " + Number(totalArredondado).toLocaleString("pt-BR", {
             minimumFractionDigits: 2
         });
 }
+
 document.querySelectorAll(".card").forEach(card => {
     const botao = card.querySelector("button");
 
