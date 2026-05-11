@@ -5,6 +5,12 @@
   font-family: Arial, sans-serif;
 }
 
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
 
 body {
   background: linear-gradient(180deg, #181062, #A721C8);
@@ -31,7 +37,11 @@ body {
   width: 130px;
   height: auto;
 }
-
+img.logo-footer {
+  width: 60px;
+  height: auto;
+  vertical-align: middle;
+}
 /* Título central */
 .topo h2 {
   font-size: 24px;
@@ -95,6 +105,17 @@ body {
 .resultado p {
   white-space: nowrap;
 }
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+p {
+    font-size: 12px;
+    color: #ffffff;
+}
 /* RESPONSIVO */
 @media (max-width: 1024px) {
   .container {
@@ -110,5 +131,27 @@ body {
   .card {
     border-left: none;
     border-bottom: 1px solid rgba(255,255,255,0.3);
+  }
+}
+
+@media (max-width: 600px) {
+
+  .topo{
+    flex-direction: column;
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .logo{
+    position: static;
+  }
+
+  .logo img{
+    width: 100px;
+  }
+
+  .topo h1{
+    font-size: 20px;
+    text-align: center;
   }
 }
